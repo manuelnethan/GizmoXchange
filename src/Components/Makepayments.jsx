@@ -28,15 +28,15 @@ const Makepayments = () => {
 
 
   return (
-    <div>
-        <nav className="m-4 form-container">
-        <Link to='/' className='btn btn-dark mx-2'>GO BACK TO PRODUCTS</Link>
+    <div className='row justify-content-center mt-0 animated-background'>
+        <nav className="m-2 form-container">
+        <Link to='/' className='btn btn-dark mx-0'>GO BACK TO PRODUCTS</Link>
         </nav>
         <h1>Make Payment - Lipa na m-pesa</h1>
         <p>
             Product Name: {product.product_name}
-        </p>
-        <p>    
+        <br />
+            
             product Cost: {product.product_cost}
         </p>
         <form onSubmit={submit}>

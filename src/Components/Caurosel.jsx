@@ -1,50 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const Caurosel = () => {
+const images = [
+  
+  'images/s5.jpg',
+  'images/s4.jpeg',
+  
+];
+
+const Carousel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section 
-    className="row">
-            <div 
-            className="col-md-12">
-                {/* <!-- below div will carry the three parts of a carousel -->  */}
-                 <div 
-                 className="carousel slide" data-bs-ride="carousel" id="mycarousel">
-                    {/* <!-- wrapper starts here  --> */}
-                     <div 
-                     className="carousel-inner">
-                        <div 
-                        className="carousel-item active image">
-                            <img src="images/d.jpeg" alt="" 
-                            className="d-block w-100"/>
-                        </div>
-                        <div 
-                        className="carousel-item image">
-                            <img src="images/s5.jpg" alt="" 
-                            className="d-block w-100"/>
-                        </div>
-                        <div 
-                        className="carousel-item image">
-                            <img src="images/s4.jpeg" alt="" 
-                            className="d-block w-100"/>
-                        </div>
-                     </div>
-                     
+    <div>
+      <div className="carousel-container mb-3">
+        <img 
+          src={images[activeIndex]} 
+          alt="Main slide" 
+          className="w-100 main-carousel-img" 
+        />
+      </div>
 
-                     
-                      <a href="#mycarousel" data-bs-slide="prev" 
-                      className="carousel-control-prev">
-                        <span 
-                        className="carousel-control-prev-icon bg-danger"></span>
-                      </a>
-                      <a href="#mycarousel" data-bs-slide="next" 
-                      className="carousel-control-next">
-                        <span 
-                        className="carousel-control-next-icon bg-danger"></span>
-                      </a>
-                 </div>
-            </div>
-          </section>
-  )
-}
+      <div className="d-flex justify-content-center gap-2">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`thumb-${index}`}
+            className={`thumbnail-img ${activeIndex === index ? 'active-thumb' : ''}`}
+            onClick={() => setActiveIndex(index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Caurosel
+export default Carousel;

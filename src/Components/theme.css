@@ -1,0 +1,28 @@
+/* Default Light Theme */
+body {
+    background-color: #f4f4f4;
+    color: #111;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  /* Dark Theme Overrides */
+  body.dark {
+    background-color: #111;
+    color: #f4f4f4;
+  }
+  
+  .theme-toggle {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #0056b3;
+  }
+  

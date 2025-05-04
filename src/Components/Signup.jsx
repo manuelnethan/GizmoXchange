@@ -39,12 +39,24 @@ const Signup=()=>{
       }
     }
     return(
-        <div className="row justify-content-center mt-4 back background">
-          <div className="col-md-6  p-4 glow-card black-form form-container">
+        <div className="row justify-content-center mt-4  animated-background">
+          <div  className="col-md-6 p-4 form-container" style={{ backgroundColor: "rgba(0,0,0,0.7)", borderRadius: "10px"}}>
 
             <h2>Signup</h2>
-            {loading}
+            
+            {loading && (
+          <div className="d-flex justify-content-center my-3">
+            <div className="spinner-border text-light" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
+
+        {error && (
+          <p style={{ color: "red" }} className="text-center">
             {error}
+          </p>
+        )}
             {success}
             <h1 className="form-containers form-controls"><b>JOIN US TODAY</b></h1>
 
@@ -52,7 +64,7 @@ const Signup=()=>{
                 <input type="text" 
                 className="form-control " 
                 placeholder="Enter Username" 
-                style={{ backgroundColor: 'black', color: 'white' }}
+                style={{ backgroundColor: 'beige', color: 'white' }}
                 value={username} onChange={(e)=>setusername(e.target.value)} 
                 required />
                 <br />
@@ -61,7 +73,7 @@ const Signup=()=>{
                 placeholder="Enter email" 
                 className="form-control" 
                 value={email} 
-                style={{ backgroundColor: 'white', color: 'black' }}
+                style={{ backgroundColor: 'beige', color: 'white' }}
                 onChange={(e)=>setEmail(e.target.value)} 
                 required />
 
@@ -70,7 +82,7 @@ const Signup=()=>{
                 className="form-control" 
                 placeholder="Enter password" 
                 value={password} 
-                style={{ backgroundColor: 'black', color: 'white' }}
+                style={{ backgroundColor: 'beige', color: 'white' }}
                 onChange={(e)=>setPassword(e.target.value)} 
                 required />
                 <br />
@@ -79,7 +91,7 @@ const Signup=()=>{
                 placeholder="Enter phone" 
                 className="form-control" 
                 value={phone} 
-                style={{ backgroundColor: 'white', color: 'black' }}
+                style={{ backgroundColor: 'beige', color: 'white' }}
                 onChange={(e)=>setPhone(e.target.value)} 
                 required />
 
@@ -87,7 +99,7 @@ const Signup=()=>{
 
                 <br />
                 <button type="submit" 
-                className="btn btn-danger">Sign up</button>
+                className="btn btn-dark">Sign up</button>
             </form>
 
             <p>Already have an account? 
